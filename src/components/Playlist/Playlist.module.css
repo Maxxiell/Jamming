@@ -1,0 +1,115 @@
+.playlistcontainer {
+  display: flex;
+  justify-content: center;
+  margin: -10px 10px; /* Simplified margin syntax */
+  margin-bottom: 10px;
+}
+.playlistinput {
+    height: 25px;
+    width: 90%;
+    margin-top: 10px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #404356;
+    color: white;
+    background: linear-gradient(to right, #5fe4ff, #ff07e2,#5fe4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 3s linear infinite;
+    background-size: 200% auto;
+}
+@keyframes gradientAnimation {
+  0% { background-position: 200% 0; }
+  100% { background-position: 0% 0; }
+}
+.playlistinput::placeholder {
+  color: rgb(74, 208, 145);
+  opacity: 1; /* optional: ensures full color visibility */
+}
+.playlistbox h2 {
+  color: white;
+  margin-top: 2px;
+}
+.playlistbox {
+  background: black;
+  width: 95%;
+  border-radius: 25px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* NEW: ensures vertical alignment of content */
+  padding: 1rem; /* NEW: adds spacing inside the container */
+  flex-wrap: wrap;
+}
+.playlistinfo {
+  flex-grow: 1; /* NEW: allows this element to grow and take available space */
+  margin-left: 1rem; /* CHANGED: replaces -45% negative margin with safer spacing */
+  display: flex; /* NEW: flex container for better vertical alignment */
+  flex-direction: column;
+  justify-content: center;
+}
+
+.trackname {
+  color: white;
+  font-size: 1.2rem; /* SLIGHTLY CHANGED: adjust for better responsiveness */
+  font-weight: 600;
+}
+
+.headerplaylist h2 {
+  color: rgb(250, 250, 250);
+  font-weight: 500;
+  font-size: 1rem; /* NEW: ensures font scales well across sizes */
+  margin: 0.3rem 0 0; /* NEW: tighter spacing */
+}
+
+.addplaylist {
+  cursor: pointer;
+  display: flex;
+  height: 50px; /* CHANGED: slightly reduced for balance */
+  width: 50px;
+  border-radius: 10px;
+  font-size: 2rem; /* CHANGED: scale icon size */
+  background: black;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: none;
+  outline: none;
+  margin-left: auto; /* NEW: pushes button to end of flex container */
+}
+.addplaylist:hover {
+    color: rgb(0, 223, 59);
+}
+.addplaylist:active {
+    color: #404356;
+}
+
+.addplaylist span {
+  font-size: 1rem;
+  font-weight: 500;
+  transform: translate(-93%, -50%);
+  position: absolute;
+  top: 93%;
+  left: 50%;
+}
+
+@media (max-width: 600px) {
+  .playlistbox {
+    flex-direction: column; /* NEW: stack items vertically on small screens */
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .playlistinfo {
+    margin: 0.5rem 0; /* NEW: spacing adjustment for vertical layout */
+    align-items: center;
+    text-align: center;
+  }
+
+  .addplaylist {
+    margin: 1rem 0 0; /* NEW: spacing adjustment when stacked */
+  }
+}

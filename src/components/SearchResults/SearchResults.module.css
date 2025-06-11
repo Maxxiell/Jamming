@@ -1,0 +1,18 @@
+.result {
+    height:57vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    position: relative;
+    z-index: 13;
+    top: 80px;
+    border-radius: 8px;
+}
+.resultreal {
+    background: linear-gradient(-45deg, #0f6c4f, #0f4476, #052d54, #0a161e);
+    height: 69.5vh;
+    width: 46%;
+    border-radius: 8px;
+    overflow-y: scroll;
+}
